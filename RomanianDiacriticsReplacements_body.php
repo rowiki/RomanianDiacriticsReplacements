@@ -10,6 +10,12 @@
 
 class RomanianDiacriticsReplacements {
 	public static function attemptSave($m_pageObj) {
+		$text = $m_pageObj->textbox1;
+		$text = mb_ereg_replace('ţ', 'ț', $text );
+		$text = mb_ereg_replace('Ţ', 'Ț', $text );
+		$text = mb_ereg_replace('ş', 'ș', $text );
+		$text = mb_ereg_replace('Ş', 'Ș', $text );
+		$m_pageObj->textbox1 = $text;
 		return true;
 	}
 }
