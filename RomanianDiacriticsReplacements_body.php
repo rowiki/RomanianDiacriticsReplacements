@@ -30,13 +30,15 @@ class RomanianDiacriticsReplacements {
 		if ($textbox_content->isRedirect())
 			return true;
 
-		$text = $m_pageObj->textbox1;
+		$oldtext = $text = $m_pageObj->textbox1;
 		$text = mb_ereg_replace('ţ', 'ț', $text );
 		$text = mb_ereg_replace('Ţ', 'Ț', $text );
 		$text = mb_ereg_replace('ş', 'ș', $text );
 		$text = mb_ereg_replace('Ş', 'Ș', $text );
 		$m_pageObj->textbox1 = $text;
-		$m_pageObj->summary .= " ([[:ro:WP:DVN|corectat automat]])";
+
+		if ($oldtext != $text)
+			$m_pageObj->summary .= " ([[:ro:WP:DVN|corectat automat]])";
 		return true;
 	}
 }
