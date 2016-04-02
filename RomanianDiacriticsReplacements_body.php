@@ -26,6 +26,12 @@ class RomanianDiacriticsReplacements {
         }
 
 	public static function attemptSave($m_pageObj) {
+
+		$namespace = $m_pageObj->getTitle()->getNamespace();
+		//TODO: let the users customize the namespaces they don't want to use
+		if ($namespace !== 0)
+			return true;
+
 		$textbox_content = RomanianDiacriticsReplacements::toEditContent( $m_pageObj, $m_pageObj->textbox1 );
 		if ($textbox_content->isRedirect())
 			return true;
