@@ -1,0 +1,28 @@
+{
+	"name": "RomanianDiacriticsReplacements",
+	"version": "0.1.0",
+	"author": [
+		"Strainu"
+	],
+	"url": "https://www.mediawiki.org/wiki/Extension:RomanianDiacriticsReplacements",
+	"descriptionmsg": "Will have some description here",
+	"license-name": "GPL2",
+	"type": "other",
+	"AutoloadClasses": {
+		"RomanianDiacriticsReplacements": "RomanianDiacriticsReplacements_body.php",
+	},
+	"config": {
+	},
+	"Hooks": {
+		"EditPage::attemptSave": [
+			"RomanianDiacriticsReplacements::attemptSave"
+		]
+	},
+	"MessagesDirs": {
+		"RomanianDiacriticsReplacements": [
+			"i18n"
+		]
+	},
+	"manifest_version": 1
+}
+
