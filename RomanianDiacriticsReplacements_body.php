@@ -16,6 +16,7 @@ class RomanianDiacriticsReplacements {
 		$text = mb_ereg_replace('ş', 'ș', $text );
 		$text = mb_ereg_replace('Ş', 'Ș', $text );
 		$m_pageObj->textbox1 = $text;
+		$m_pageObj->summary .= " ([[:ro:WP:DVN|corectat automat]])";
 		return true;
 	}
 }
