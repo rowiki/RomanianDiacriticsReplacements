@@ -9,7 +9,27 @@
  */
 
 class RomanianDiacriticsReplacements {
+	private static function toEditContent($page, $text) {
+                if ($text === false || $text === null) {
+                        return $text;
+                }
+
+                $content = ContentHandler::makeContent($text, $page->getTitle(),
+                        $page->contentModel, $page->contentFormat);
+
+                if (!$page->isSupportedContentModel($content->getModel())) {
+                        throw new MWException('This content model is not supported: '
+                                . ContentHandler::getLocalizedName( $content->getModel()));
+                }
+
+                return $content;
+        }
+
 	public static function attemptSave($m_pageObj) {
+		$textbox_content = RomanianDiacriticsReplacements::toEditContent( $m_pageObj, $m_pageObj->textbox1 );
+		if ($textbox_content->isRedirect())
+			return true;
+
 		$text = $m_pageObj->textbox1;
 		$text = mb_ereg_replace('ţ', 'ț', $text );
 		$text = mb_ereg_replace('Ţ', 'Ț', $text );
