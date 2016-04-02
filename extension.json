@@ -5,8 +5,8 @@
 		"Strainu"
 	],
 	"url": "https://www.mediawiki.org/wiki/Extension:RomanianDiacriticsReplacements",
-	"descriptionmsg": "Will have some description here",
-	"license-name": "GPL2",
+	"descriptionmsg": "Extension that corrects the Romanian diacritics following the rules described at https://ro.wikipedia.org/wiki/Wikipedia:Diacriticele_vechi_%C8%99i_noi",
+	"license-name": "GPL-2.0",
 	"type": "other",
 	"AutoloadClasses": {
 		"RomanianDiacriticsReplacements": "RomanianDiacriticsReplacements_body.php",
