@@ -9,7 +9,7 @@
 	"license-name": "GPL-2.0",
 	"type": "other",
 	"AutoloadClasses": {
-		"RomanianDiacriticsReplacements": "RomanianDiacriticsReplacements_body.php",
+		"RomanianDiacriticsReplacements": "RomanianDiacriticsReplacements_body.php"
 	},
 	"config": {
 	},
@@ -25,4 +25,3 @@
 	},
 	"manifest_version": 1
 }
-
